@@ -25,6 +25,7 @@ function pushToGit(formattedDate) {
       console.error("❌ Failed to set Git config:", err.message);
       return;
     }
+    }
 
   
   exec("git add .", { cwd: process.cwd() }, (error, stdout, stderr) => {
