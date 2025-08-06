@@ -19,6 +19,13 @@ function pushToGit(formattedDate) {
   const message = `Auto update on ${formattedDate}`;
 
   console.log("🔄 Starting Git operations...");
+
+    exec('git config user.email "auto-bot@example.com" && git config user.name "Auto Bot"', (err) => {
+    if (err) {
+      console.error("❌ Failed to set Git config:", err.message);
+      return;
+    }
+
   
   exec("git add .", { cwd: process.cwd() }, (error, stdout, stderr) => {
     if (error) {
