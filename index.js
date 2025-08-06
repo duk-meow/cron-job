@@ -16,7 +16,7 @@ function updateFile() {
   });
 }
 
-function pushToGit(formattedDate: string) {
+function pushToGit(formattedDate) {
   const message = `Auto update on ${formattedDate}`;
   console.log("🔄 Starting Git operations...");
 
