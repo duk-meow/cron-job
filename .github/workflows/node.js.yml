@@ -25,12 +25,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}   # ✅ use your PAT here
 
       - name: Configure Git for pushing (YOUR account)
         run: |
           git config --global user.name "duk-meow"
           git config --global user.email "insanetomm@gmail.com"
-          git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -57,4 +58,3 @@ jobs:
           git add .
           git diff --cached --quiet || git commit -m "chore: automated update"
           git push --force
-
