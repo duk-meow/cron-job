@@ -56,4 +56,5 @@ jobs:
         run: |
           git add .
           git diff --cached --quiet || git commit -m "chore: automated update"
-          git push
+          git push --force
+
